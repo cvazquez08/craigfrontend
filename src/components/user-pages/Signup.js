@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Row, Col } from "react-bootstrap";
+
 
 // axios calls the backend routes, like so: backend /api/signup", axios.CRUD
 import axios from "axios";
@@ -29,7 +29,7 @@ class Signup extends Component {
     event.preventDefault();
     axios
       .post(
-        `http://localhost:3001/api/signup`, // 1st mandatory: which route I am hitting in the backend
+        `${process.env.REACT_APP_API_URL}/signup`, // 1st mandatory: which route I am hitting in the backend
         this.state, // 2nd mandatory: what I am sending (in this case POST route, need to send something. For GET route, this is not mandatory)
         { withCredentials: true } // 3rd optional: "credentials: true" (in CORS/App.js backend) which allows frontend to comminucate with backend
       )

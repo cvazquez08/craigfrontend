@@ -16,7 +16,7 @@ class MyListings extends Component {
 
   componentDidMount() {
     axios
-      .get(`http://localhost:3001/api/my-listings`, { withCredentials: true })
+      .get(`${process.env.REACT_APP_API_URL}/my-listings`, { withCredentials: true })
       .then(responseFromApi => {
         this.setState({
           myListings: [
@@ -38,7 +38,7 @@ class MyListings extends Component {
 
     if (myListings[index].postType === "car") {
       axios
-        .delete(`http://localhost:3001/api/delete-car/${id}`, {
+        .delete(`${process.env.REACT_APP_API_URL}/delete-car/${id}`, {
           withCredentials: true
         })
         .then(responseFromApi => {
@@ -47,7 +47,7 @@ class MyListings extends Component {
         .catch(err => console.log(err));
     } else {
       axios
-        .delete(`http://localhost:3001/api/delete-house/${id}`, {
+        .delete(`${process.env.REACT_APP_API_URL}/delete-house/${id}`, {
           withCredentials: true
         })
         .then(responseFromApi => {

@@ -29,7 +29,7 @@ class HousePostAd extends Component {
   handleSubmit(event) {
     event.preventDefault();
     axios
-      .post(`http://localhost:3001/api/house-post`, this.state, {
+      .post(`${process.env.REACT_APP_API_URL}/house-post`, this.state, {
         withCredentials: true
       })
       .then(responseFromServer => {
@@ -50,7 +50,7 @@ class HousePostAd extends Component {
     }
 
     axios
-      .post(`http://localhost:3001/api/upload-file`, uploadData, {
+      .post(`${process.env.REACT_APP_API_URL}/upload-file`, uploadData, {
         withCredentials: true
       })
       .then(response => {

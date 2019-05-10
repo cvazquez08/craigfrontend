@@ -14,7 +14,7 @@ class HouseDetails extends Component {
     const { params } = this.props.match;
 
     axios
-      .get(`http://localhost:3001/api/house-details/${params.houseid}`, {
+      .get(`${process.env.REACT_APP_API_URL}/house-details/${params.houseid}`, {
         withCredentials: true
       })
       .then(responseFromApi => {

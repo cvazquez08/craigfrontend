@@ -12,7 +12,7 @@ class LatestListing extends Component {
 
   componentDidMount() {
     axios
-      .get(`http://localhost:3001/api/all-listings`, {
+      .get(`${process.env.REACT_APP_API_URL}/all-listings`, {
         withCredentials: true
       })
       .then(responseFromApi => {

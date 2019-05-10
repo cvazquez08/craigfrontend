@@ -17,7 +17,7 @@ class CarDetails extends Component {
     const { params } = this.props.match;
 
     axios
-      .get(`http://localhost:3001/api/car-details/${params.carid}`, {
+      .get(`${process.env.REACT_APP_API_URL}/car-details/${params.carid}`, {
         withCredentials: true
       })
       .then(responseFromApi => {

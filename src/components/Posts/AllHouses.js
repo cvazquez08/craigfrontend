@@ -17,7 +17,7 @@ class AllHouses extends Component {
   componentDidMount() {
     // get all houses from the database first, when componentMounts first it is empty, then rerenders.
     axios
-      .get(`http://localhost:3001/api/all-houses`, { withCredentials: true })
+      .get(`${process.env.REACT_APP_API_URL}/all-houses`, { withCredentials: true })
       .then(responseFromApi => {
         this.setState({ allHouses: responseFromApi.data });
       })

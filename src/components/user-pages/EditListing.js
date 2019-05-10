@@ -74,7 +74,7 @@ class EditListing extends Component {
 
     if (listingType.postType === "car") {
       axios
-        .put(`http://localhost:3001/api/car-update/${id}`, this.state, {
+        .put(`${process.env.REACT_APP_API_URL}/car-update/${id}`, this.state, {
           withCredentials: true
         })
         .then(responseFromApi => {
@@ -83,7 +83,7 @@ class EditListing extends Component {
         .catch(err => console.log(err));
     } else {
       axios
-        .put(`http://localhost:3001/api/house-update/${id}`, this.state, {
+        .put(`${process.env.REACT_APP_API_URL}/house-update/${id}`, this.state, {
           withCredentials: true
         })
         .then(responseFromApi => {
